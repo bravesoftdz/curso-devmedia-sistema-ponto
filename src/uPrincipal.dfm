@@ -1,7 +1,7 @@
-object Form1: TForm1
+object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'frmPrincipal'
   ClientHeight = 482
   ClientWidth = 704
   Color = clBtnFace
@@ -17,69 +17,11 @@ object Form1: TForm1
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object mnuPrincipal: TMainMenu
-    Images = imgPrincipal
-    Left = 256
-    Top = 8
-    object mniArquivo: TMenuItem
-      Caption = 'Arquivo'
-      object mniNovo: TMenuItem
-        Caption = 'Novo'
-        object mniPessoa: TMenuItem
-          Caption = 'Pessoa'
-          ImageIndex = 0
-        end
-        object mniPonto: TMenuItem
-          Caption = 'Ponto'
-          ImageIndex = 1
-        end
-        object mniFeriado: TMenuItem
-          Caption = 'Feriado'
-          ImageIndex = 2
-        end
-      end
-      object N1: TMenuItem
-        Caption = '-'
-      end
-      object mniSair: TMenuItem
-        Caption = 'Sair'
-        ImageIndex = 5
-      end
-    end
-    object mniJanela: TMenuItem
-      Caption = 'Janela'
-      object mniCascata: TMenuItem
-        Caption = 'Em cascata'
-      end
-      object mniHorizontal: TMenuItem
-        Caption = 'Lado a Lado na Horizontal'
-      end
-      object mniVertical: TMenuItem
-        Caption = 'Lado a Lado na Vertical'
-      end
-    end
-    object mniFerramentas: TMenuItem
-      Caption = 'Ferramentas'
-      object mniBancoDados: TMenuItem
-        Caption = 'Banco de Dados'
-      end
-      object mniAjustePonto: TMenuItem
-        Caption = 'Ajuste do Ponto'
-      end
-    end
-    object mniAjuda: TMenuItem
-      Caption = 'Ajuda'
-      object mniSobre: TMenuItem
-        Caption = 'Sobre'
-        ImageIndex = 5
-      end
-    end
-  end
   object imgPrincipal: TImageList
     Left = 320
     Top = 8
     Bitmap = {
-      494C010106001400140010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010106001400200010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -349,5 +291,65 @@ object Form1: TForm1
       C003C003F83FA877C003E00FE47740F7C003F00FCF6B01E3C003F81F9E75C1E3
       C003FC7FBE7BC0E3C003FFFFFEFFC83F00000000000000000000000000000000
       000000000000}
+  end
+  object mnuPrincipal: TMainMenu
+    Images = imgPrincipal
+    Left = 256
+    Top = 8
+    object mniArquivo: TMenuItem
+      Caption = 'Arquivo'
+      object mniNovo: TMenuItem
+        Caption = 'Novo'
+        object mniPessoa: TMenuItem
+          Caption = 'Pessoa'
+          ImageIndex = 0
+        end
+        object mniPonto: TMenuItem
+          Caption = 'Ponto'
+          ImageIndex = 1
+        end
+        object mniFeriado: TMenuItem
+          Caption = 'Feriado'
+          ImageIndex = 2
+        end
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object mniSair: TMenuItem
+        Caption = 'Sair'
+        ImageIndex = 5
+        OnClick = mniSairClick
+      end
+    end
+    object mniJanela: TMenuItem
+      Caption = 'Janela'
+      object mniCascata: TMenuItem
+        Caption = 'Em cascata'
+      end
+      object mniHorizontal: TMenuItem
+        Caption = 'Lado a Lado na Horizontal'
+      end
+      object mniVertical: TMenuItem
+        Caption = 'Lado a Lado na Vertical'
+      end
+    end
+    object mniFerramentas: TMenuItem
+      Caption = 'Ferramentas'
+      object mniBancoDados: TMenuItem
+        Caption = 'Banco de Dados'
+      end
+      object mniAjustePonto: TMenuItem
+        Caption = 'Ajuste do Ponto'
+      end
+    end
+    object mniAjuda: TMenuItem
+      Caption = 'Ajuda'
+      object mniSobre: TMenuItem
+        Caption = 'Sobre'
+        ImageIndex = 5
+        OnClick = mniSobreClick
+      end
+    end
   end
 end

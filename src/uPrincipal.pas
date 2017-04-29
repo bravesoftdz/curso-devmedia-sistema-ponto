@@ -4,29 +4,31 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ImgList;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ImgList, System.ImageList;
 
 type
-  TForm1 = class(TForm)
+  TfrmPrincipal = class(TForm)
+    imgPrincipal: TImageList;
     mnuPrincipal: TMainMenu;
     mniArquivo: TMenuItem;
     mniNovo: TMenuItem;
     mniPessoa: TMenuItem;
     mniPonto: TMenuItem;
+    mniFeriado: TMenuItem;
     N1: TMenuItem;
     mniSair: TMenuItem;
-    mniFerramentas: TMenuItem;
-    mniAjuda: TMenuItem;
-    mniSobre: TMenuItem;
-    mniBancoDados: TMenuItem;
     mniJanela: TMenuItem;
     mniCascata: TMenuItem;
     mniHorizontal: TMenuItem;
     mniVertical: TMenuItem;
-    mniFeriado: TMenuItem;
+    mniFerramentas: TMenuItem;
+    mniBancoDados: TMenuItem;
     mniAjustePonto: TMenuItem;
-    imgPrincipal: TImageList;
+    mniAjuda: TMenuItem;
+    mniSobre: TMenuItem;
     procedure FormShow(Sender: TObject);
+    procedure mniSairClick(Sender: TObject);
+    procedure mniSobreClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,15 +36,32 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frmPrincipal: TfrmPrincipal;
 
 implementation
 
 {$R *.dfm}
 
-procedure TForm1.FormShow(Sender: TObject);
+uses uSobre;
+
+procedure TfrmPrincipal.FormShow(Sender: TObject);
 begin
   Caption := Application.Title;
+end;
+
+procedure TfrmPrincipal.mniSairClick(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TfrmPrincipal.mniSobreClick(Sender: TObject);
+begin
+  frmSobre := TfrmSobre.Create(Application);
+  try
+    frmSobre.ShowModal;
+  finally
+    frmSobre.Free;
+  end;
 end;
 
 end.
